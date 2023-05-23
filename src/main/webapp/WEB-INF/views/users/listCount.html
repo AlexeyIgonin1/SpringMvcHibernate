@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List count</title>
+</head>
+<body>
+
+<h2>List count</h2>
+<br/>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Model</th>
+        <th>Color</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car, iterStat : ${cars}"
+        th:style="${iterStat.odd}? 'font-weight: bold;'">
+        <td th:text="${car.id}"></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.color}"></td>
+        <td th:text="${car.price}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
